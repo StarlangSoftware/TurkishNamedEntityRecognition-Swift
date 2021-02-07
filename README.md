@@ -40,3 +40,32 @@ Result: The imported project is listed in the Project Explorer view and files ar
 **From IDE**
 
 After being done with the downloading and opening project, select **Build** option from **Product** menu. After compilation process, user can run TurkishNamedEntityRecognition-Swift.
+
+Detailed Description
+============
++ [Gazetteer](#gazetteer)
+
+## Gazetteer
+
+Bir Gazetter yüklemek için
+
+	init(name: String, fileName: String)
+
+Hazır Gazetteerleri kullanmak için
+
+	AutoNER()
+
+Bir Gazetteer'de bir kelime var mı diye kontrol etmek için
+
+	func contains(word: String) -> Bool
+
+## Cite
+If you use this resource on your research, please cite the following paper: 
+
+```
+@inproceedings{ertopcu17,  
+author={B. {Ertopçu} and A. B. {Kanburoğlu} and O. {Topsakal} and O. {Açıkgöz} and A. T. {Gürkan} and B. {Özenç} and İ. {Çam} and B. {Avar} and G. {Ercan} and O. T. {Yıldız}},  
+booktitle={2017 International Conference on Computer Science and Engineering (UBMK)},  title={A new approach for named entity recognition},   
+year={2017},  
+pages={474-479}
+}
