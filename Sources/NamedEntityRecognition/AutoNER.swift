@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AutoNER{
+public class AutoNER{
     
     private var personGazetteer: Gazetteer
     private var organizationGazetteer: Gazetteer
