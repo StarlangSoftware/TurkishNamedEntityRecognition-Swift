@@ -7,11 +7,11 @@
 
 import Foundation
 
-public class AutoNER{
+open class AutoNER{
     
-    private var personGazetteer: Gazetteer
-    private var organizationGazetteer: Gazetteer
-    private var locationGazetteer: Gazetteer
+    public var personGazetteer: Gazetteer
+    public var organizationGazetteer: Gazetteer
+    public var locationGazetteer: Gazetteer
 
     /**
     Constructor for creating Person, Organization, and Location gazetteers in automatic Named Entity Recognition.
