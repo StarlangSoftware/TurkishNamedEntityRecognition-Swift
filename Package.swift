@@ -20,7 +20,7 @@ let package = Package(
         .target(
             name: "NamedEntityRecognition",
             dependencies: ["Corpus"],
-            resources: [.process("gazetteer-location.txt"),.process("gazettteer-organization.txt"),.process("gazettteer-person.txt"),.process("nerdata.txt")]),
+            resources: [.process("gazetteer-location.txt"),.process("gazetteer-organization.txt"),.process("gazetteer-person.txt"),.process("nerdata.txt")]),
         .testTarget(
             name: "NamedEntityRecognitionTests",
             dependencies: ["NamedEntityRecognition"]),
