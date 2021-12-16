@@ -18,11 +18,9 @@ public class NERCorpus : Corpus{
     */
     public override init(fileName : String){
         super.init()
-        let thisSourceFile = URL(fileURLWithPath: #file)
-        let thisDirectory = thisSourceFile.deletingLastPathComponent()
-        let url = thisDirectory.appendingPathComponent(fileName)
+        let url = Bundle.module.url(forResource: fileName, withExtension: "txt")
         do{
-            let fileContent = try String(contentsOf: url, encoding: .utf8)
+            let fileContent = try String(contentsOf: url!, encoding: .utf8)
             let lines : [String] = fileContent.split(whereSeparator: \.isNewline).map(String.init)
             for line in lines{
                 self.addSentence(s: NamedEntitySentence(sentence: line))

@@ -6,7 +6,7 @@ final class NERCorpusTest: XCTestCase {
     
     func testNERCorpus() {
         let counter = CounterHashMap<NamedEntityType>()
-        let nerCorpus = NERCorpus(fileName: "nerdata.txt")
+        let nerCorpus = NERCorpus(fileName: "nerdata")
         XCTAssertEqual(27556, nerCorpus.sentenceCount())
         XCTAssertEqual(492233, nerCorpus.numberOfWords())
         for i in 0..<nerCorpus.sentenceCount(){
@@ -16,8 +16,8 @@ final class NERCorpusTest: XCTestCase {
                 counter.put(key: (namedEntityWord as! NamedEntityWord).getNamedEntityType())
             }
         }
-        XCTAssertEqual(438976, counter.count(key: NamedEntityType.NONE))
-        XCTAssertEqual(23878, counter.count(key: NamedEntityType.PERSON))
+        XCTAssertEqual(438980, counter.count(key: NamedEntityType.NONE))
+        XCTAssertEqual(23874, counter.count(key: NamedEntityType.PERSON))
         XCTAssertEqual(16931, counter.count(key: NamedEntityType.ORGANIZATION))
         XCTAssertEqual(12448, counter.count(key: NamedEntityType.LOCATION))
     }

@@ -3,7 +3,7 @@ import XCTest
 
 final class GazetteerTest: XCTestCase {
     func testContains() {
-        let gazetteer = Gazetteer(name: "location", fileName: "gazetteer-location.txt")
+        let gazetteer = Gazetteer(name: "location", fileName: "gazetteer-location")
         XCTAssertTrue(gazetteer.contains(word: "bağdat"))
         XCTAssertTrue(gazetteer.contains(word: "BAĞDAT"))
         XCTAssertTrue(gazetteer.contains(word: "belçika"))

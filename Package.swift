@@ -1,4 +1,4 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -12,14 +12,15 @@ let package = Package(
             targets: ["NamedEntityRecognition"]),
     ],
     dependencies: [
-        .package(name: "Corpus", url: "https://github.com/StarlangSoftware/Corpus-Swift.git", .exact("1.0.10")),
+        .package(name: "Corpus", url: "https://github.com/StarlangSoftware/Corpus-Swift.git", .exact("1.0.13")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "NamedEntityRecognition",
-            dependencies: ["Corpus"]),
+            dependencies: ["Corpus"],
+            resources: [.process("gazetteer-location.txt"),.process("gazettteer-organization.txt"),.process("gazettteer-person.txt"),.process("nerdata.txt")]),
         .testTarget(
             name: "NamedEntityRecognitionTests",
             dependencies: ["NamedEntityRecognition"]),
